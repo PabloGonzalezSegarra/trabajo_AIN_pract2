@@ -6,7 +6,6 @@
   .get_fieldops;
   .get_medics;
 
-
   .register_service("general");
   .wait(2000);
 
@@ -17,8 +16,8 @@
   +aformar;
   .print("Soldiers: ", B);
   .send(B, tell, a_formar([50,0,50]));
-  .send(M, tell, a_formar([30,0,30]));  
-  .send(O, tell, a_formar([30,0,30]));
+  .send(M, tell, a_formar([20,0,20]));  
+  .send(O, tell, a_formar([20,0,20]));
 
   .goto([10,0,10]);
   .print("He llegado!");
