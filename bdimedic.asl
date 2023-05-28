@@ -7,13 +7,13 @@
   .length(C,L);
   +total_control_points(L);
   +patrolling;
-  +patroll_point(0);
-  .print("Got control points").
+  +patroll_point(0).
+  //.print("Got control points").
 
 
 +target_reached(T): patrolling & team(200) 
   <-
-  .print("MEDPACK!");
+  //.print("MEDPACK!");
   .cure;
   ?patroll_point(P);
   -+patroll_point(P+1);
@@ -35,32 +35,36 @@
 
 +flag (F): team(100) 
   <-
-  .goto(F).
+  .register_service("medic");
+  +start.
 
-+flag_taken: team(100) 
++a_formar(Pos)[source(A)]
   <-
-  .print("In ASL, TEAM_ALLIED flag_taken");
-  ?base(B);
+  .print("A formar!");
+  +aformar;
+  .calculateFormation(Pos, X);
+  .print("Pos: ", X);
+  .goto(X).
+
++a_capturar[source(A)]
+  <-
+  .print("A capturar!");
+  -aformar;
+  +acapturar;
+  ?flag(F);
+  .calculateDest(F, XF);
+  .goto(XF).
+  
++flag_taken: team(100)
+  <-
+  .print("flag_taken");
+  ?base(Base);
+  -acapturar;
   +returning;
-  .goto(B);
-  -exploring.
-
-+heading(H): exploring
-  <-
-  .cure;
-  .wait(2000);
-  .turn(0.375).
-
-//+heading(H): returning
-//  <-
-//  .print("returning").
-
-+target_reached(T): team(100)
-  <- 
-  .print("target_reached");
-  +exploring;
-  .turn(0.375).
+  ?flag(F);
+  .look_at(F);
+  .goto(Base).
 
 +enemies_in_fov(ID,Type,Angle,Distance,Health,Position)
-  <- 
+  <-
   .shoot(3,Position).

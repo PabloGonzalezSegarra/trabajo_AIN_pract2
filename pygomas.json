@@ -7,43 +7,49 @@
     "axis": [
 		{
             "rank": "BDISoldier",
-            "name": "axis_yourlogin",
+            "name": "axis_pgonseg",
             "password": "secret",
             "amount": 8,
             "asl": "bdisoldier.asl"
         },
         {
             "rank": "BDIMedic",
-            "name": "medic_axis_yourlogin",
+            "name": "medic_axis_pgonseg",
             "password": "secret",
             "asl": "bdimedic.asl"
         },
          {
             "rank": "BDIFieldOp",
-            "name": "fieldop_axis_yourlogin",
+            "name": "fieldop_axis_pgonseg",
             "password": "secret",
             "asl": "bdifieldop.asl"
         }
     ],
      "allied": [
 		{
-            "rank": "BDISoldier",
-            "name": "allied_yourlogin",
+            "rank": "soldier.BDIDrunkenSoldier",
+            "name": "allied_pgonseg",
             "password": "secret",
-            "amount": 8,
+            "amount": 7,
             "asl": "bdisoldier.asl"
         },
         {
-            "rank": "BDIMedic",
-            "name": "medic_allied_yourlogin",
+            "rank": "medic.BDIDrunkenMedic",
+            "name": "medic_allied_pgonseg",
             "password": "secret",
             "asl": "bdimedic.asl"
         },
-         {
-            "rank": "BDIFieldOp",
-            "name": "fieldop_allied_yourlogin",
+        {
+            "rank": "fieldop.BDIDrunkenFieldOp",
+            "name": "fieldop_allied_pgonseg",
             "password": "secret",
             "asl": "bdifieldop.asl"
+        },
+        {
+            "rank": "BDISoldier",
+            "name": "general_allied_pgonseg",
+            "password": "secret",
+            "asl": "bdigeneral.asl"
         }
    ]
   }
